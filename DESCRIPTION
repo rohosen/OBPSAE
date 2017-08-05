@@ -1,0 +1,9 @@
+Package: OBPSAE
+Title: Observed best predictor for small area estimation
+Version: 0.0.0.9000
+Authors@R: person("Rohosen", "Bandyopadhyay", email = "rohosen.stat@gmail.com", role = c("aut", "cre"))
+Description: OBP for SAE.
+Depends: R (>= 3.1.1)
+License: UCDavis
+LazyData: true
+RoxygenNote: 6.0.1
