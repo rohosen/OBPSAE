@@ -2,7 +2,7 @@
 % Please edit documentation in R/MSPE_Benchmark.R
 \name{MSPE_McSpline_Benchmark}
 \alias{MSPE_McSpline_Benchmark}
-\title{Mc Spline MSPE benchmark estimator}
+\title{McSpline MSPE estimator of benchmarked OBP}
 \usage{
 MSPE_McSpline_Benchmark(formula, data, errorvar, weight, A.BPE, K = 1000)
 }
@@ -20,10 +20,10 @@ MSPE_McSpline_Benchmark(formula, data, errorvar, weight, A.BPE, K = 1000)
 \item{K}{number of Monte Carlo simulations. Default is 1000.}
 }
 \value{
-The function will return a list with the McSpline benchmark MSPE estimator, both adjusted and augmented methods.
+The function will return a list with the McSpline MSPE estimator of both adjusted and augmented OBP's.
 }
 \description{
-This function computes the McSPline MSPE benchmark estimator.
+This function computes the McSpline MSPE estimator of benchmarked OBP.
 }
 \references{
 Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"

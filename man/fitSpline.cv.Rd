@@ -12,8 +12,11 @@ fitSpline.cv(x, y)
 \item{y}{dependent variable values}
 }
 \value{
-A list containing fitted values, optimal degree and number of knots, coefficients.
+A list containing fitted values, optimal degree of the polynomial, number of knots and the coefficients.
 }
 \description{
 This function fits an optimal spline function to the given data set after choosing optimal degree of the polynomial and optimal number of knots by cross-validation.
+}
+\details{
+This function returns a list of elements for the fitted Spline function. f.hat returns the fitted values, p is optimal degree of the polynomial, q is the number of knots, beta is the fitted regression coefficients of the polynomial and gamma is the coeffcients of the knot terms and knots are the locations of corresponding knots.
 }

@@ -23,7 +23,7 @@ MSPE_McJack(formula, data, errorvar, A.BPE, K = 1000, returnMcSpline = TRUE)
 The function will return a list with the McJack and McSpline (if returnMcSpline is TRUE) MSPE estimator.
 }
 \description{
-This function computes the McJack MSPE estimator.
+This function computes the McJack MSPE estimator of Observed Best Predictor(OBP).
 }
 \references{
 Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"

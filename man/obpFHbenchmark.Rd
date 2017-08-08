@@ -25,10 +25,10 @@ obpFHbenchmark(formula, data, errorvar, weight, method = c("adjusted",
 \item{precision}{covergence tolerance limit for estimating randvar.}
 }
 \value{
-The function will return a list consisting of the OBP of the small area mean, BPE of the regression coefficient of the fixed effect and BPE of variance of the random effect (if not specified by the user).
+The function will return a list of adjusted OBP or augmented OBP or both depending on the "method".
 }
 \description{
-This function computes the observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+This function computes the benchmarked observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
 }
 \references{
 Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"

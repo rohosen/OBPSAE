@@ -2,7 +2,7 @@
 % Please edit documentation in R/MSPE_Benchmark.R
 \name{MSPE_McJack_Benchmark}
 \alias{MSPE_McJack_Benchmark}
-\title{Mc Jack MSPE benchmark estimator}
+\title{McJack MSPE estimator of benchmarked OBP}
 \usage{
 MSPE_McJack_Benchmark(formula, data, errorvar, weight, A.BPE, K = 1000,
   returnMcSpline = TRUE)
@@ -23,7 +23,7 @@ MSPE_McJack_Benchmark(formula, data, errorvar, weight, A.BPE, K = 1000,
 \item{returnMcSpline}{logical. Returns McSpline MSPE benchmark estimators with McJack (default).}
 }
 \value{
-The function will return a list with the McJack and McSpline (if returnMcSpline is TRUE) MSPE benchmark estimators, both adjusted and augmented methods.
+The function will return a list with the McJack and McSpline (if returnMcSpline is TRUE) MSPE estimators of both adjusted and augmented methods.
 }
 \description{
 This function computes the McJack MSPE benchmark estimator.

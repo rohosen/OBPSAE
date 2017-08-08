@@ -2,7 +2,7 @@
 % Please edit documentation in R/obpFHbenchmark.R
 \name{obpFH_adjusted}
 \alias{obpFH_adjusted}
-\title{Adjusted observed best predictor satisfying benchmark condition for Fay-Herriot model.}
+\title{Adjusted observed best predictor for Fay-Herriot Model}
 \usage{
 obpFH_adjusted(formula, data, errorvar, weight, randvar = NULL,
   maxiter = 100, precision = 1e-04)
@@ -21,14 +21,12 @@ obpFH_adjusted(formula, data, errorvar, weight, randvar = NULL,
 \item{maxiter}{maximum number of iterations used in estimating randvar.}
 
 \item{precision}{covergence tolerance limit for estimating randvar.}
-
-\item{method}{string specifying the benchmarking method. Options are "adjusted" and "augmented". Computes both if not specified. See references for details.}
 }
 \value{
-The function will return a list consisting of the OBP of the small area mean, BPE of the regression coefficient of the fixed effect and BPE of variance of the random effect (if not specified by the user).
+The function will return a list containing the Adjusted OBP.
 }
 \description{
-This function computes the observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+This function computes the Adjusted observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
 }
 \references{
 Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"

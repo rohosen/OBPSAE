@@ -21,7 +21,7 @@ MSPE_McSpline(formula, data, errorvar, A.BPE, K = 1000)
 The function will return a list with the McSpline MSPE estimator.
 }
 \description{
-This function computes the McSPline MSPE estimator.
+This function computes the McSPline MSPE estimator of Observed Best Predictor(OBP).
 }
 \references{
 Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"

@@ -2,22 +2,26 @@
 % Please edit documentation in R/MSPE.R
 \name{MSPE_boot_augmented}
 \alias{MSPE_boot_augmented}
-\title{Bootstrap MSPE augmented estimator of OBP}
+\title{Bootstrap MSPE estimator of augmented OBP}
 \usage{
 MSPE_boot_augmented(theta.OBP.augmented, D, x, weight, L = 200)
 }
 \arguments{
 \item{D}{Scalar, Vector (or diagonal matrix) of error variances.}
 
+\item{x}{The independant variable values}
+
+\item{weight}{Weight of each small area for calculating the benchmarked OBP (generally sampling weights of each small area).}
+
 \item{L}{is the number of bootstrap samples. the default is 200.}
 
-\item{theta.OBP}{A vector of OBPs.}
+\item{theta.OBP.adjusted}{A vector of augmented OBPs.}
 }
 \value{
-This function will return the Bootstrap MSPE estimator of OBP.
+This function will return the Bootstrap MSPE estimator of Augmented OBP.
 }
 \description{
-This function computes the bootstrap MSPE estimatr of OBP.
+This function computes the bootstrap MSPE estimator of benchmarked augmented OBP.
 }
 \references{
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.

@@ -7,17 +7,21 @@
 MSPE_boot_adjusted(theta.OBP.adjusted, D, x, weight, L = 200)
 }
 \arguments{
+\item{theta.OBP.adjusted}{A vector of adjusted OBPs.}
+
 \item{D}{Scalar, Vector (or diagonal matrix) of error variances.}
 
-\item{L}{is the number of bootstrap samples. the default is 200.}
+\item{x}{The independant variable values}
 
-\item{theta.OBP}{A vector of OBPs.}
+\item{weight}{Weight of each small area for calculating the benchmarked OBP (generally sampling weights of each small area).}
+
+\item{L}{is the number of bootstrap samples. the default is 200.}
 }
 \value{
-This function will return the Bootstrap MSPE estimator of OBP.
+This function will return the Bootstrap MSPE estimator of Adjusted OBP.
 }
 \description{
-This function computes the bootstrap MSPE estimator of OBP.
+This function computes the bootstrap MSPE estimator of benchmarked adjusted OBP.
 }
 \references{
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.

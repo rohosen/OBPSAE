@@ -24,7 +24,10 @@ bpeFH(formula, data, errorvar, randvar = NULL, maxiter = 100,
 The function will return a list consisting of the OBP of the small area mean, BPE of the regression coefficient of the fixed effect and BPE of variance of the random effect (if not specified by the user).
 }
 \description{
-This function computes the best predictive estimator (BPE) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+This function computes the best predictive estimators (BPE) of the unknown parameters for Fay-Herriot model.
+}
+\details{
+This function computes BPE of the regression coefficients of the fixed effect (beta). The variance of the random effect can be specified by the user in which case that will be used to calculate the BPE of beta. Otherwise the function will calculate BPE of the random effect variance component and use that to calculate the BPE of beta.
 }
 \references{
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.

@@ -65,7 +65,7 @@ obpFH <- function(formula, data, errorvar, randvar=NULL, maxiter=100, precision=
 
 #' Best predictive estimator for Fay-Herriot model.
 #'
-#' This function computes the best predictive estimator (BPE) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+#' This function computes the best predictive estimators (BPE) of the unknown parameters for Fay-Herriot model.
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of domains D. Details of model specification are given under Details.
 #' @param data data frame containing the variable names in formula and errorvar.
 #' @param errorvar vector containing the D sampling variances of direct estimators for each domain. The values must be sorted as the variables in formula.
@@ -73,8 +73,9 @@ obpFH <- function(formula, data, errorvar, randvar=NULL, maxiter=100, precision=
 #' @param maxiter maximum number of iterations used in estimating randvar.
 #' @param precision covergence tolerance limit for estimating randvar.
 #' @return The function will return a list consisting of the OBP of the small area mean, BPE of the regression coefficient of the fixed effect and BPE of variance of the random effect (if not specified by the user).
+#' @details This function computes BPE of the regression coefficients of the fixed effect (beta). The variance of the random effect can be specified by the user in which case that will be used to calculate the BPE of beta. Otherwise the function will calculate BPE of the random effect variance component and use that to calculate the BPE of beta.
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
-#' @import sae
+#' @import MASS
 #' @export
 
 

@@ -4,17 +4,17 @@
 \name{Hospital}
 \alias{Hospital}
 \title{Hospital data}
-\format{A data frame with NNNN rows and NN variables:
+\format{A data frame with 23 rows and 4 variables:
 \describe{
-  \item{subject}{Anonymized Mechanical Turk Worker ID}
-  \item{trial}{Trial number, from 1..NNN}
-  ...
+  \item{Sample Size}{Number of kidney transplants in each hospital during a 27 months period (at least 50)}
+  \item{Graft Failure Rate}{Graft failure rates for kidney transplant operations i.e. number of graft failures/sample size}
+  \item{Severity Index}{Severity index at each hospital which is measured by the average fraction of females, blacks, children, and extremely ill kidney recipients at that hospital}
+  \item{SE}{The standard error for the graft failure rate. The variance for the graft failure rate \eqn{D_{i}}, is approximated by \eqn{(0.2)(0.8)/n_{i}}, where 0.2 is the observed failure rate for all hospitals. Thus, \eqn{D_{i}} is assumed known.}
 }}
 \usage{
 Hospital
 }
 \description{
-This is data from the first experiment ever to try XYZ using Mechanical
-Turk workers.
+Morris and Christiansen (1995) presented a dataset involving 23 hospitals (out of a total of 219 hospitals) that had at least 50 kidney transplants during a 27-month period.
 }
 \keyword{datasets}

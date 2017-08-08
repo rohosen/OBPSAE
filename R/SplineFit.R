@@ -1,10 +1,10 @@
 #' Fitting the optimal spline by cross validation method.
-#' 
-#' This function fits an optimal spline function to the given data set after choosing optimal degree of the polynomial and optimal number of knots by cross-validation. 
+#'
+#' This function fits an optimal spline function to the given data set after choosing optimal degree of the polynomial and optimal number of knots by cross-validation.
 #' @param x independent variable values.
 #' @param y dependent variable values
-#' @return A list containing fitted values, optimal degree and number of knots, coefficients.
-#' @import sae
+#' @return A list containing fitted values, optimal degree of the polynomial, number of knots and the coefficients.
+#' @details This function returns a list of elements for the fitted Spline function. f.hat returns the fitted values, p is optimal degree of the polynomial, q is the number of knots, beta is the fitted regression coefficients of the polynomial and gamma is the coeffcients of the knot terms and knots are the locations of corresponding knots.
 #' @export
 
 fitSpline.cv <- function(x,y){
@@ -32,14 +32,7 @@ OptimizeSpline <- function(x,y,DegreeRange=c(1:3),numKnotsRange=c(1:5)){
 }
 
 
-#' Fitting the optimal spline by cross validation method.
-#' 
-#' This function fits an optimal spline function to the given data set after choosing optimal degree of the polynomial and optimal number of knots by cross-validation. 
-#' @param x independent variable values.
-#' @param y dependent variable values
-#' @return A list containing fitted values, optimal degree and number of knots, coefficients.
-#' @import sae
-#' @export
+
 
 fitSpline <- function(x,y,splineDegree,numKnots){
   if(numKnots<=0){
@@ -52,7 +45,7 @@ fitSpline <- function(x,y,splineDegree,numKnots){
       X = cbind(X,x^i)
     }
   }
-  
+
   for(i in 1:length(knots)){
     X = cbind(X, sapply(x-knots[i], function(u)max(u,0))^splineDegree)
   }
@@ -61,8 +54,8 @@ fitSpline <- function(x,y,splineDegree,numKnots){
   yhat = H %*% y
   beta = paramEst[1:(splineDegree+1)]
   gamma = paramEst[(splineDegree+2):(splineDegree+numKnots+1)]
-  
-  
+
+
   return(list(yhat = yhat, H = H, beta = beta, gamma = gamma, knots = knots))
 }
 
