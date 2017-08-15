@@ -1,14 +1,14 @@
 #' Observed best predictor for Fay-Herriot model.
 #'
-#' This function computes the observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+#' This function computes the Observed Best Predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect.
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. Details of model specification are given under Details.
 #' @param data optional data frame containing the variable names in \code{formula}.
 #' @param errorvar vector containing the variances of the random error for each small area.
-#' @param randvar varinace of the random effect. If not supplied, BPE is estimated.
+#' @param randvar varinace of the random effect. If not supplied, it is estimated by BPE.
 #' @param maxiter maximum number of iterations used in estimating randvar.
 #' @param precision covergence tolerance limit for estimating randvar.
 #' @details
-#' \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
+#' If \code{randvar} is not provided, it is first estimated by its BPE. \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
 #' @return The function will return a list with the following objects
 #' \item{theta.OBP}{OBP of the small area mean.}
 #' \item{A.BPE}{BPE of variance of the random effect (if not specified by the user).}
@@ -70,15 +70,15 @@ obpFH <- function(formula, data, errorvar, randvar=NULL, maxiter=100, precision=
 
 #' Best predictive estimator for Fay-Herriot model.
 #'
-#' This function computes the best predictive estimators (BPE) of the unknown parameters for Fay-Herriot model.
+#' This function computes the Best Predictive Estimators (BPE) of the unknown parameters for Fay-Herriot model. It computes BPE of the regression coefficients of the fixed effect (beta). The variance of the random effect can be specified by the user in which case that will be used to calculate the BPE of beta. Otherwise the function will calculate BPE of the variance component of the random effect and use that to calculate the BPE of beta.
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. Details of model specification are given under Details.
 #' @param data optional data frame containing the variable names in \code{formula}.
 #' @param errorvar vector containing the variances of the random error for each small area.
-#' @param randvar varinace of the random effect. If not supplied, BPE is estimated.
+#' @param randvar varinace of the random effect. If not supplied, it is estimated by BPE.
 #' @param maxiter maximum number of iterations used in estimating randvar.
 #' @param precision covergence tolerance limit for estimating randvar.
 #' @details
-#' \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
+#' If \code{randvar} is not provided, it is first estimated by its BPE. \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
 #' @return The function will return a list with the following objects.
 #' \item{A.BPE}{BPE of variance of the random effect (if not specified by the user).}
 #' \item{beta.BPE}{BPE of the regression coefficient of the fixed effects.}
