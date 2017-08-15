@@ -39,7 +39,7 @@ obpFHbenchmark <- function(formula, data, errorvar, weight, method=c("adjusted",
 }
 
 
-#' Adjusted observed best predictor for Fay-Herriot Model
+#' Adjusted observed best predictor for Fay-Herriot Model..
 #'
 #' This function computes the Adjusted Observed Best Predictor (OBP) for Fay-Herriot model. This is one of the methods of computing the benchmarked OBP.
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of domains D. Details of model specification are given under Details.
