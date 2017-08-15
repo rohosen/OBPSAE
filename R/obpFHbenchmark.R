@@ -1,15 +1,24 @@
 #' Benchmarked observed best predictor for Fay-Herriot model.
 #'
 #' This function computes the benchmarked observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
-#' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of domains D. Details of model specification are given under Details.
-#' @param data data frame containing the variable names in formula and errorvar.
-#' @param errorvar vector containing the D sampling variances of direct estimators for each domain. The values must be sorted as the variables in formula.
+#' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. Details of model specification are given under Details.
+#' @param data optional data frame containing the variable names in \code{formula}.
+#' @param errorvar vector containing the variances of the random error for each small area.
 #' @param weight vector containing the sampling weights of small areas. Default is uniform. If sum of the weights is not 1, the weights are normalized.
-#' @param method string specifying the benchmarking method. Options are "adjusted" and "augmented". Computes both if not specified. See references for details.
+#' @param method string specifying the benchmarking method. Options are "adjusted" and "augmented". Computes both if not specified. See Details for more usage information.
 #' @param randvar varinace of the random effect. If not supplied, BPE is estimated.
 #' @param maxiter maximum number of iterations used in estimating randvar.
 #' @param precision covergence tolerance limit for estimating randvar.
-#' @return The function will return a list of adjusted OBP or augmented OBP or both depending on the "method".
+#' @details
+#' \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
+#' \cr If \code{method} is set to "adjusted", only \code{obpAdjusted} is returned.\cr
+#' \cr If \code{method} is set to "augmented", \code{obpAugmented, A.BPE.aug} and \code{beta.BPE.aug} are returned.\cr
+#'
+#' @return The function will return a list with all the following objects by default.
+#' \item{obpAdjusted}{a vector of adjusted OBP values.}
+#' \item{obpAugmented}{a vector of augmented OBP values.}
+#' \item{A.BPE.aug}{ BPE of variance of random effects.}
+#' \item{beta.BPE.aug}{ BPE of fixed effects regression coefficients.}
 #' @references Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 #' @import sae
