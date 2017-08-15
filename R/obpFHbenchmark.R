@@ -1,4 +1,4 @@
-#' Benchmarked observed best predictor for Fay-Herriot model. (agbranch)
+#' Benchmarked observed best predictor for Fay-Herriot model.
 #'
 #' This function computes the benchmarked observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. Details of model specification are given under Details.
@@ -38,7 +38,7 @@ obpFHbenchmark <- function(formula, data, errorvar, weight, method=c("adjusted",
 }
 
 
-#' Adjusted observed best predictor for Fay-Herriot Model
+#' Adjusted observed best predictor for Fay-Herriot Model..
 #'
 #' This function computes the Adjusted observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of domains D. Details of model specification are given under Details.
