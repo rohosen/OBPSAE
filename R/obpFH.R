@@ -8,6 +8,7 @@
 #' @param maxiter maximum number of iterations used in estimating randvar.
 #' @param precision covergence tolerance limit for estimating randvar.
 #' @details
+#' This function computes BPE of the regression coefficients of the fixed effect (beta). The variance of the random effect can be specified by the user in which case that will be used to calculate the BPE of beta. Otherwise the function will calculate BPE of the random effect variance component and use that to calculate the BPE of beta.
 #' \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
 #' @return The function will return a list with the following objects
 #' \item{theta.OBP}{OBP of the small area mean.}
