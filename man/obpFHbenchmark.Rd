@@ -28,16 +28,17 @@ obpFHbenchmark(formula, data, errorvar, weight, method = c("adjusted",
 The function will return a list with all the following objects by default.
 \item{obpAdjusted}{a vector of adjusted OBP values.}
 \item{obpAugmented}{a vector of augmented OBP values.}
-\item{A.BPE.aug}{ BPE of variance of random effects.}
-\item{beta.BPE.aug}{ BPE of fixed effects regression coefficients.}
+\item{A.BPE.aug}{ BPE of variance component of random effects under the augmented model (if not provided by the user).}
+\item{beta.BPE.aug}{ BPE of fixed effects regression coefficients under the augmented model.}
 }
 \description{
-This function computes the benchmarked observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+This function computes the benchmarked Observed Best Predictor (OBP) for Fay-Herriot model. Depending on the \code{method} specified by the user it computes the Adjusted OBP or Augmented OBP or both.
 }
 \details{
-\code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
 \cr If \code{method} is set to "adjusted", only \code{obpAdjusted} is returned.\cr
 \cr If \code{method} is set to "augmented", \code{obpAugmented, A.BPE.aug} and \code{beta.BPE.aug} are returned.\cr
+\cr The variance of the random effect can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect.\cr
+\cr \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
 }
 \references{
 Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"

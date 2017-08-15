@@ -14,7 +14,7 @@ obpFH(formula, data, errorvar, randvar = NULL, maxiter = 100,
 
 \item{errorvar}{vector containing the variances of the random error for each small area.}
 
-\item{randvar}{varinace of the random effect. If not supplied, BPE is estimated.}
+\item{randvar}{varinace of the random effect. If not supplied, it is estimated by BPE.}
 
 \item{maxiter}{maximum number of iterations used in estimating randvar.}
 
@@ -27,10 +27,10 @@ The function will return a list with the following objects
 \item{beta.BPE}{BPE of the regression coefficients of the fixed effect.}
 }
 \description{
-This function computes the observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+This function computes the Observed Best Predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect.
 }
 \details{
-\code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
+If \code{randvar} is not provided, it is first estimated by its BPE. \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
 }
 \references{
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
