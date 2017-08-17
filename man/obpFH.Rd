@@ -8,23 +8,29 @@ obpFH(formula, data, errorvar, randvar = NULL, maxiter = 100,
   precision = 1e-04)
 }
 \arguments{
-\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of domains D. Details of model specification are given under Details.}
+\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. Details of model specification are given under Details.}
 
-\item{data}{data frame containing the variable names in formula and errorvar.}
+\item{data}{optional data frame containing the variable names in \code{formula}.}
 
-\item{errorvar}{vector containing the D sampling variances of direct estimators for each domain. The values must be sorted as the variables in formula.}
+\item{errorvar}{vector containing the variances of the random error for each small area.}
 
-\item{randvar}{varinace of the random effect. If not supplied, BPE is estimated.}
+\item{randvar}{varinace of the random effect. If not supplied, it is estimated by BPE.}
 
 \item{maxiter}{maximum number of iterations used in estimating randvar.}
 
 \item{precision}{covergence tolerance limit for estimating randvar.}
 }
 \value{
-The function will return a list consisting of the OBP of the small area mean, BPE of the regression coefficient of the fixed effect and BPE of variance of the random effect (if not specified by the user).
+The function will return a list with the following objects
+\item{theta.OBP}{OBP of the small area mean.}
+\item{A.BPE}{BPE of variance of the random effect (if not specified by the user).}
+\item{beta.BPE}{BPE of the regression coefficients of the fixed effect.}
 }
 \description{
-This function computes the observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+This function computes the Observed Best Predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect.
+}
+\details{
+If \code{randvar} is not provided, it is first estimated by its BPE. \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
 }
 \references{
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.

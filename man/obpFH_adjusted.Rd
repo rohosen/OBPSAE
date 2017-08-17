@@ -23,13 +23,18 @@ obpFH_adjusted(formula, data, errorvar, weight, randvar = NULL,
 \item{precision}{covergence tolerance limit for estimating randvar.}
 }
 \value{
-The function will return a list containing the Adjusted OBP.
+The function will return a list containing the Adjusted OBP as follows:
+\item{obpAdjusted}{a vector of adjusted OBP values.}
 }
 \description{
-This function computes the Adjusted observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+This function computes the Adjusted Observed Best Predictor (OBP) for Fay-Herriot model. This is one of the methods of computing the benchmarked OBP.
+}
+\details{
+\cr The variance of the random effect can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing Adjusted OBP it also calculates the BPE of the regression coefficients of the fixed effect.\cr
+\cr \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
 }
 \references{
-Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"
+Bandyopadhyay R, Jiang J (2017) "Benchmarking of the Observed Best Predictor"
 
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 }

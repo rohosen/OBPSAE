@@ -23,13 +23,16 @@ obpFH_augmented(formula, data, errorvar, weight, randvar = NULL,
 \item{precision}{covergence tolerance limit for estimating randvar.}
 }
 \value{
-The function will return a list containing the Augmented OBP.
+The function will return a list with all the following objects by default.
+\item{obpAugmented}{a vector of augmented OBP values.}
+\item{A.BPE.aug}{ BPE of variance component of random effects under the augmented model (if not provided by the user).}
+\item{beta.BPE.aug}{ BPE of fixed effects regression coefficients under the augmented model.}
 }
 \description{
-This function computes the Augmented observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect
+This function computes the Augmented observed best predictor (OBP) for Fay-Herriot model. The variance of the random error can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE) under the augmented model. In the process of of computing augmented OBP it also calculates the BPE of the regression coefficients of the fixed effect.
 }
 \references{
-Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"
+Bandyopadhyay R, Jiang J (2017) "Benchmarking of the Observed Best Predictor"
 
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 }

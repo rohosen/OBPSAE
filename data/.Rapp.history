@@ -1,0 +1,7 @@
+load("/Users/rohosenb/Documents/PhD Research/Roho Research/PackageFinal/OBPSAE/data/Income.rda")
+head(Income)
+nrow(Income)
+ncol(Income)
+Income[1:20,]
+library(OBPSAE)
+OBPSAE::Hospital

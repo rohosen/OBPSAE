@@ -6,15 +6,15 @@
 \title{Income data}
 \format{A data frame with 561 rows and 9 variables:
 \describe{
-  \item{State code}{State code of each of the 50 states and District of Columbia}
-  \item{Year}{The year the data correspond to, generally ranging over 1969, 1979 to 1988 except 1980.}
-  \item{BEA}{Per-capita income estimates produced by the Bureau of Economic Analysis (BEA).}
-  \item{CPS/Census estimate-3persons}{Estimated median income of 3-persons families from Current Population Survey (CPS) OR Census of 1969 and 1979.}
-  \item{CPS SE estimate 3-person}{Standard Errors of the Estimated median income of 3-persons family from Current Population Survey (CPS) OR Census, for Census the SE is set to zero.}
-  \item{CPS/Census estimate 4persons}{Estimated median income of 3-persons families from Current Population Survey (CPS) OR Census of 1969 and 1979.}
-  \item{CPS SE estimate 4-person}{Standard Errors of the Estimated median income of 3-persons family from Current Population Survey (CPS) OR Census, for Census the SE is set to zero.}
-  \item{CPS/Census estimate-5persons}{Estimated median income of 3-persons families from Current Population Survey (CPS) OR Census of 1969 and 1979.}
-  \item{CPS SE estimate 5-person}{Standard Errors of the Estimated median income of 3-persons family from Current Population Survey (CPS) OR Census, for Census the SE is set to zero.}
+\item{State code}{State code of each of the 50 states and District of Columbia}
+\item{Year}{The year the data correspond to, generally ranging over 1969, 1979 to 1988 except 1980.}
+\item{BEA}{Per-capita income estimates produced by the Bureau of Economic Analysis (BEA).}
+\item{CPS/Census estimate-3persons}{Estimated median income of 3-persons families from Current Population Survey (CPS) OR Census of 1969 and 1979.}
+\item{CPS SE estimate 3-person}{Standard Errors of the Estimated median income of 3-persons family from Current Population Survey (CPS) OR Census, for Census the SE is set to zero.}
+\item{CPS/Census estimate 4persons}{Estimated median income of 3-persons families from Current Population Survey (CPS) OR Census of 1969 and 1979.}
+\item{CPS SE estimate 4-person}{Standard Errors of the Estimated median income of 3-persons family from Current Population Survey (CPS) OR Census, for Census the SE is set to zero.}
+\item{CPS/Census estimate-5persons}{Estimated median income of 3-persons families from Current Population Survey (CPS) OR Census of 1969 and 1979.}
+\item{CPS SE estimate 5-person}{Standard Errors of the Estimated median income of 3-persons family from Current Population Survey (CPS) OR Census, for Census the SE is set to zero.}
 }}
 \usage{
 Income
