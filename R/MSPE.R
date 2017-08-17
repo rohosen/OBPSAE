@@ -1,10 +1,11 @@
-#' Bootstrap MSPE Estimator of OBP
+#' Bootstrap MSPE Estimator of OBP.
 #'
-#' This function computes the bootstrap MSPE estimator of OBP.
+#' This function computes the bootstrap MSPE estimator of the Observed Best Predictor (OBP).
 #' @param theta.OBP A vector of OBPs.
-#' @param D Scalar, Vector (or diagonal matrix) of error variances.
-#' @param L is the number of bootstrap samples. the default is 200.
-#' @return This function will return the Bootstrap MSPE estimator of OBP.
+#' @param D Scalar, Vector (or diagonal matrix) of random error variances.
+#' @param x Design matrix without intercept.
+#' @param L Number of bootstrap samples. the default is 200.
+#' @return This function will return a vector of the Bootstrap MSPE estimator of OBP.
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 #' @import mvtnorm
 #' @export
@@ -42,15 +43,16 @@ MSPE_boot <- function(theta.OBP, D, x, L=200){
 
 }
 
-#' Bootstrap MSPE estimator of adjusted OBP
+#' Bootstrap MSPE estimator of Adjusted Observed Best Predictor (Adjusted OBP).
 #'
 #' This function computes the bootstrap MSPE estimator of benchmarked adjusted OBP.
 #' @param theta.OBP.adjusted A vector of adjusted OBPs.
-#' @param D Scalar, Vector (or diagonal matrix) of error variances.
-#' @param x The independant variable values
+#' @param D Scalar, Vector (or diagonal matrix) of random error variances.
+#' @param x Design matrix without intercept term.
 #' @param weight Weight of each small area for calculating the benchmarked OBP (generally sampling weights of each small area).
 #' @param L is the number of bootstrap samples. the default is 200.
-#' @return This function will return the Bootstrap MSPE estimator of Adjusted OBP.
+#' @return This function will return a vector of the Bootstrap MSPE estimator of Adjusted OBP.
+#' @references Bandyopadhyay R, Jiang J (2017) "Benchmarking the Observed Best Predictor"
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 #' @import mvtnorm
 #' @export
@@ -86,15 +88,16 @@ MSPE_boot_adjusted <- function(theta.OBP.adjusted, D, x, weight, L=200){
 
 }
 
-#' Bootstrap MSPE estimator of augmented OBP
+#' Bootstrap MSPE estimator of Augmented Observed Best Predictor (Augmented OBP).
 #'
 #' This function computes the bootstrap MSPE estimator of benchmarked augmented OBP.
-#' @param theta.OBP.adjusted A vector of augmented OBPs.
-#' @param D Scalar, Vector (or diagonal matrix) of error variances.
-#' @param x The independant variable values
+#' @param theta.OBP.augmented A vector of augmented OBPs.
+#' @param D Scalar, Vector (or diagonal matrix) of random error variances.
+#' @param x Design matrix without intercept term.
 #' @param weight Weight of each small area for calculating the benchmarked OBP (generally sampling weights of each small area).
-#' @param L is the number of bootstrap samples. the default is 200.
-#' @return This function will return the Bootstrap MSPE estimator of Augmented OBP.
+#' @param L Number of bootstrap samples. the default is 200.
+#' @return This function will return a vector of the Bootstrap MSPE estimator of Augmented OBP.
+#' @references Bandyopadhyay R, Jiang J (2017) "Benchmarking the Observed Best Predictor"
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 #' @import mvtnorm
 #' @export
@@ -129,13 +132,13 @@ MSPE_boot_augmented <- function(theta.OBP.augmented, D, x, weight, L=200){
 }
 
 
-#' Naive MSPE Estimator of OBP
+#' Naive MSPE Estimator of Observed Best Predictor (OBP).
 #'
 #' This function computes the naive MSPE estimator of OBP.
 #' @param y A vector of the response variable.
-#' @param D Scalar, Vector (or diagonal matrix) of error variances.
+#' @param D Scalar, Vector (or diagonal matrix) of random error variances.
 #' @param theta.OBP A vector of OBP values
-#' @param A.BPE BPE estimate of variance of random effects.
+#' @param A.BPE BPE estimate of variance of random effects or the true value, if known.
 #' @return This function will return the Naive MSPE estimator of the OBP.
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 #' @export
@@ -159,14 +162,19 @@ MSPE_naive <- function(y, D, theta.OBP, A.BPE){
 }
 
 
-#' JNR MSPE Estimator of OBP
+#' JNR MSPE Estimator of Observed Best Predictor.
 #'
-#' This function computes the JNR MSPE estimator of OBP.
-#' @param y A vector of the response variable.
-#' @param D Scalar, Vector (or diagonal matrix) of error variances.
-#' @param theta.OBP A vector of OBP values
-#' @param A.BPE BPE estimate of variance of random effects.
-#' @return This function will return the Naive MSPE estimator of the OBP.
+#' This function computes the MSPE estimator of Observed Best Predictor (OBP) proposed by Jiang, Nguyen and Rao (2011).
+#' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
+#' @param data optional data frame containing the variable names in \code{formula}.
+#' @param errorvar vector containing the variances of the random error for each small area.
+#' @param theta.OBP an optional vector of OBP values. See details.
+#' @param A.BPE optional BPE estimate of variance of random effects or the true value, if known. See details.
+#' @param beta.BPE optional BPE estimate of fixed effects coefficients. See details.
+#' @details
+#' \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
+#' \cr \code{theta.OBP}, \code{A.BPE} and \code{beta.BPE} are optional arguments. If any of them is missing, all three are computed from the data.
+#' @return This function will return a vector of the JNR MSPE estimator of the OBP.
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 #' @import MASS
 #' @export

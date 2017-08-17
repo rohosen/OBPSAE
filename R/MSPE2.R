@@ -101,16 +101,20 @@ mcjack <- function(y, x, j, D, K){
 
 
 
-#' Mc Spline MSPE estimator
+#' McSpline MSPE estimator
 #'
-#' This function computes the McSPline MSPE estimator of Observed Best Predictor(OBP).
-#' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of domains D. Details of model specification are given under Details.
-#' @param data data frame containing the variable names in formula and errorvar.
-#' @param errorvar vector containing the D sampling variances of direct estimators for each domain. The values must be sorted as the variables in formula.
-#' @param A.BPE BPE estimator of random error variance component. Recomputes if missing.
+#' This function computes the McSPline MSPE estimator of the Observed Best Predictor (OBP).
+#' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
+#' @param data optional data frame containing the variable names in \code{formula}.
+#' @param errorvar vector containing the variances of the random error for each small area.
+#' @param A.BPE optional BPE estimate of random effects variance.
 #' @param K number of Monte Carlo simulations. Default is 1000.
-#' @return The function will return a list with the McSpline MSPE estimator.
-#' @references Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"
+#' @details
+#' \code{formula} is specified in the form \code{response ~ predictor} where the predictor is univariate. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
+#' \cr If \code{A.BPE} is missing, the function computes the BPE from data. User can also provide the true A instead if that is known.
+#' @return The function will return a list with the following object.
+#' \item{McSpline}{ McSpline estimator of the MSPE of OBP.}
+#' @references Bandyopadhyay R, Jiang J (2017) "Benchmarking the Observed Best Predictor"
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 #' @export
 
@@ -177,17 +181,22 @@ MSPE_McSpline <- function(formula, data, errorvar, A.BPE, K=1000){
 
 
 
-#' Mc Jack MSPE estimator
+#' McJack MSPE estimator
 #'
-#' This function computes the McJack MSPE estimator of Observed Best Predictor(OBP).
-#' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of domains D. Details of model specification are given under Details.
-#' @param data data frame containing the variable names in formula and errorvar.
-#' @param errorvar vector containing the D sampling variances of direct estimators for each domain. The values must be sorted as the variables in formula.
-#' @param A.BPE BPE estimator of random error variance component. Recomputes if missing.
+#' This function computes the McJack MSPE estimator of the Observed Best Predictor (OBP).
+#' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
+#' @param data optional data frame containing the variable names in \code{formula}.
+#' @param errorvar vector containing the variances of the random error for each small area.
+#' @param A.BPE optional BPE estimate of random effects variance.
 #' @param K number of Monte Carlo simulations. Default is 1000.
 #' @param returnMcSpline logical. Returns McSpline estimator with McJack (default).
-#' @return The function will return a list with the McJack and McSpline (if returnMcSpline is TRUE) MSPE estimator.
-#' @references Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"
+#' @details
+#' \code{formula} is specified in the form \code{response ~ predictor} where the predictor is univariate. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
+#' \cr If \code{A.BPE} is missing, the function computes the BPE from data. User can also provide the true A instead if that is known.
+#' @return The function will return a list with the following objects.
+#' \item{McJack}{ McJack estimator of the MSPE of OBP.}
+#' \item{McSpline}{ McSpline estimator of the MSPE of OBP. This is returned by default. To turn this feature off, set \code{returnMcSpline = FALSE}.}
+#' @references Bandyopadhyay R, Jiang J (2017) "Benchmarking the Observed Best Predictor"
 #' @references Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 #' @export
 

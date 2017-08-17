@@ -1,8 +1,8 @@
 Package: OBPSAE
-Title: Observed best predictor for small area estimation
-Version: 0.0.0.9000
+Title: Observed best predictors for small area estimation
+Version: 1.0.0
 Authors@R: person("Rohosen", "Bandyopadhyay", email = "rohosen.stat@gmail.com", role = c("aut", "cre"))
-Description: OBP for SAE.
+Description: Functions for OBP  under Fay-Herriot model.
 Depends: R (>= 3.1.1)
 License: UCDavis
 LazyData: true
