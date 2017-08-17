@@ -95,7 +95,7 @@ mcjack_bench <- function(y, x, j, D, weight, K){
 #' This function computes the McSpline MSPE estimator of the benchmarked Observed Best Predictor.
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
 #' @param data optional data frame containing the variable names in \code{formula}.
-#' @param errorvar vector containing the variances of the random error for each small area.
+#' @param errorvar vector containing the variances of the random errors for all small areas.
 #' @param weight vector containing the sampling weights of small areas. If sum of the weights is not 1, the weights are normalized.
 #' @param A.BPE optional BPE estimate of random effects variance.
 #' @param K number of Monte Carlo simulations. Default is 1000.
@@ -194,7 +194,7 @@ MSPE_McSpline_Benchmark <- function(formula, data, errorvar, weight, A.BPE, K=10
 #' This function computes the McJack MSPE benchmark estimator.
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
 #' @param data optional data frame containing the variable names in \code{formula}.
-#' @param errorvar vector containing the variances of the random error for each small area.
+#' @param errorvar vector containing the variances of the random errors for all small areas.
 #' @param weight vector containing the sampling weights of small areas. If sum of the weights is not 1, the weights are normalized.
 #' @param A.BPE optional BPE estimate of random effects variance.
 #' @param K number of Monte Carlo simulations. Default is 1000.

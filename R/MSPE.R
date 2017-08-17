@@ -167,7 +167,7 @@ MSPE_naive <- function(y, D, theta.OBP, A.BPE){
 #' This function computes the MSPE estimator of Observed Best Predictor (OBP) proposed by Jiang, Nguyen and Rao (2011).
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
 #' @param data optional data frame containing the variable names in \code{formula}.
-#' @param errorvar vector containing the variances of the random error for each small area.
+#' @param errorvar vector containing the variances of the random errors for all small areas.
 #' @param theta.OBP an optional vector of OBP values. See details.
 #' @param A.BPE optional BPE estimate of variance of random effects or the true value, if known. See details.
 #' @param beta.BPE optional BPE estimate of fixed effects coefficients. See details.

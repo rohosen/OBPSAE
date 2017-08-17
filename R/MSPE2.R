@@ -106,7 +106,7 @@ mcjack <- function(y, x, j, D, K){
 #' This function computes the McSPline MSPE estimator of the Observed Best Predictor (OBP).
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
 #' @param data optional data frame containing the variable names in \code{formula}.
-#' @param errorvar vector containing the variances of the random error for each small area.
+#' @param errorvar vector containing the variances of the random errors for all small areas.
 #' @param A.BPE optional BPE estimate of random effects variance.
 #' @param K number of Monte Carlo simulations. Default is 1000.
 #' @details
@@ -186,7 +186,7 @@ MSPE_McSpline <- function(formula, data, errorvar, A.BPE, K=1000){
 #' This function computes the McJack MSPE estimator of the Observed Best Predictor (OBP).
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
 #' @param data optional data frame containing the variable names in \code{formula}.
-#' @param errorvar vector containing the variances of the random error for each small area.
+#' @param errorvar vector containing the variances of the random errors for all small areas.
 #' @param A.BPE optional BPE estimate of random effects variance.
 #' @param K number of Monte Carlo simulations. Default is 1000.
 #' @param returnMcSpline logical. Returns McSpline estimator with McJack (default).
