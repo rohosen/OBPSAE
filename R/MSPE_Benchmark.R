@@ -191,7 +191,7 @@ MSPE_McSpline_Benchmark <- function(formula, data, errorvar, weight, A.BPE, K=10
 
 #' McJack MSPE estimator of benchmarked OBP
 #'
-#' This function computes the McJack MSPE benchmark estimator.
+#' This function computes the McJack MSPE estimator of the benchmarked Observed Best Predictor.
 #' @param formula an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.
 #' @param data optional data frame containing the variable names in \code{formula}.
 #' @param errorvar vector containing the variances of the random errors for all small areas.

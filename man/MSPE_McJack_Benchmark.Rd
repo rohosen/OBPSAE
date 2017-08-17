@@ -30,7 +30,7 @@ The function will return a list with the following objects.
 \item{McSpline_Aug_bench}{McSpline MSPE estimator of the augmented OBP. This is returned by default. To turn this feature off, set \code{returnMcSpline = FALSE}}
 }
 \description{
-This function computes the McJack MSPE benchmark estimator.
+This function computes the McJack MSPE estimator of the benchmarked Observed Best Predictor.
 }
 \details{
 \code{formula} is specified in the form \code{response ~ predictor} where the predictor is univariate. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
