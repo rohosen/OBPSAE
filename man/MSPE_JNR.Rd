@@ -2,24 +2,32 @@
 % Please edit documentation in R/MSPE.R
 \name{MSPE_JNR}
 \alias{MSPE_JNR}
-\title{JNR MSPE Estimator of OBP}
+\title{JNR MSPE Estimator of Observed Best Predictor.}
 \usage{
 MSPE_JNR(formula, data, errorvar, theta.OBP, A.BPE, beta.BPE)
 }
 \arguments{
-\item{theta.OBP}{A vector of OBP values}
+\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.}
 
-\item{A.BPE}{BPE estimate of variance of random effects.}
+\item{data}{optional data frame containing the variable names in \code{formula}.}
 
-\item{y}{A vector of the response variable.}
+\item{errorvar}{vector containing the variances of the random error for each small area.}
 
-\item{D}{Scalar, Vector (or diagonal matrix) of error variances.}
+\item{theta.OBP}{an optional vector of OBP values. See details.}
+
+\item{A.BPE}{optional BPE estimate of variance of random effects or the true value, if known. See details.}
+
+\item{beta.BPE}{optional BPE estimate of fixed effects coefficients. See details.}
 }
 \value{
-This function will return the Naive MSPE estimator of the OBP.
+This function will return a vector of the JNR MSPE estimator of the OBP.
 }
 \description{
-This function computes the JNR MSPE estimator of OBP.
+This function computes the MSPE estimator of Observed Best Predictor (OBP) proposed by Jiang, Nguyen and Rao (2011).
+}
+\details{
+\code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
+\cr \code{theta.OBP}, \code{A.BPE} and \code{beta.BPE} are optional arguments. If any of them is missing, all three are computed from the data.
 }
 \references{
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.

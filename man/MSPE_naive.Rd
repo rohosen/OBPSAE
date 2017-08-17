@@ -2,18 +2,18 @@
 % Please edit documentation in R/MSPE.R
 \name{MSPE_naive}
 \alias{MSPE_naive}
-\title{Naive MSPE Estimator of OBP}
+\title{Naive MSPE Estimator of Observed Best Predictor (OBP).}
 \usage{
 MSPE_naive(y, D, theta.OBP, A.BPE)
 }
 \arguments{
 \item{y}{A vector of the response variable.}
 
-\item{D}{Scalar, Vector (or diagonal matrix) of error variances.}
+\item{D}{Scalar, Vector (or diagonal matrix) of random error variances.}
 
 \item{theta.OBP}{A vector of OBP values}
 
-\item{A.BPE}{BPE estimate of variance of random effects.}
+\item{A.BPE}{BPE estimate of variance of random effects or the true value, if known.}
 }
 \value{
 This function will return the Naive MSPE estimator of the OBP.

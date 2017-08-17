@@ -2,22 +2,24 @@
 % Please edit documentation in R/MSPE.R
 \name{MSPE_boot}
 \alias{MSPE_boot}
-\title{Bootstrap MSPE Estimator of OBP}
+\title{Bootstrap MSPE Estimator of OBP.}
 \usage{
 MSPE_boot(theta.OBP, D, x, L = 200)
 }
 \arguments{
 \item{theta.OBP}{A vector of OBPs.}
 
-\item{D}{Scalar, Vector (or diagonal matrix) of error variances.}
+\item{D}{Scalar, Vector (or diagonal matrix) of random error variances.}
 
-\item{L}{is the number of bootstrap samples. the default is 200.}
+\item{x}{Design matrix without intercept.}
+
+\item{L}{Number of bootstrap samples. the default is 200.}
 }
 \value{
-This function will return the Bootstrap MSPE estimator of OBP.
+This function will return a vector of the Bootstrap MSPE estimator of OBP.
 }
 \description{
-This function computes the bootstrap MSPE estimator of OBP.
+This function computes the bootstrap MSPE estimator of the Observed Best Predictor (OBP).
 }
 \references{
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.

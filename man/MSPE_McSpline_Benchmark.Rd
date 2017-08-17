@@ -7,26 +7,32 @@
 MSPE_McSpline_Benchmark(formula, data, errorvar, weight, A.BPE, K = 1000)
 }
 \arguments{
-\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of domains D. Details of model specification are given under Details.}
+\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.}
 
-\item{data}{data frame containing the variable names in formula and errorvar.}
+\item{data}{optional data frame containing the variable names in \code{formula}.}
 
-\item{errorvar}{vector containing the D sampling variances of direct estimators for each domain. The values must be sorted as the variables in formula.}
+\item{errorvar}{vector containing the variances of the random error for each small area.}
 
-\item{weight}{vector of weights.}
+\item{weight}{vector containing the sampling weights of small areas. If sum of the weights is not 1, the weights are normalized.}
 
-\item{A.BPE}{BPE estimator of random error variance component. Recomputes if missing.}
+\item{A.BPE}{optional BPE estimate of random effects variance.}
 
 \item{K}{number of Monte Carlo simulations. Default is 1000.}
 }
 \value{
-The function will return a list with the McSpline MSPE estimator of both adjusted and augmented OBP's.
+The function will return a list with the following objects.
+\item{McSpline_Adj_bench}{ McSpline MSPE estimator of the adjusted OBP.}
+\item{McSpline_Aug_bench}{ McSpline MSPE estimator of the augmented OBP.}
 }
 \description{
-This function computes the McSpline MSPE estimator of benchmarked OBP.
+This function computes the McSpline MSPE estimator of the benchmarked Observed Best Predictor.
+}
+\details{
+\code{formula} is specified in the form \code{response ~ predictor} where the predictor is univariate. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
+\cr If \code{A.BPE} is missing, the function computes its BPE from data. User can also provide the true A instead if that is known.
 }
 \references{
-Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"
+Bandyopadhyay R, Jiang J (2017) "Benchmarking the Observed Best Predictor"
 
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 }

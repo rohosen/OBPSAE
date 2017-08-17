@@ -12,12 +12,20 @@ fitSpline.cv(x, y)
 \item{y}{dependent variable values}
 }
 \value{
-A list containing fitted values, optimal degree of the polynomial, number of knots and the coefficients.
+A list containing the following objects.
+\item{f.hat}{ fitted values.}
+\item{p}{ degree of the fitted polynomial.}
+\item{q}{ number of knots.}
+\item{beta}{ estimated coefficients of the polynomial.}
+\item{gamma}{ estimated coefficients of the truncated polynomial.}
+\item{knots}{ location of the knots.}
 }
 \description{
 This function fits an optimal spline function to the given data set after choosing optimal degree of the polynomial and optimal number of knots by cross-validation.
 }
 \details{
-This function returns a list of elements for the fitted Spline function. f.hat returns the fitted values, p is optimal degree of the polynomial, q is the number of knots, beta is the fitted regression coefficients of the polynomial and gamma is the coeffcients of the knot terms and knots are the locations of corresponding knots.
+The equation of a spline with degree \eqn{p} and \eqn{q} knots \eqn{\xi_1, \xi_2, \cdots, \xi_q}{\xi_1, \xi_2, ..., \xi_q} is
+\deqn{y = \beta_0 + \sum^p_{k=1}\beta_k x^k + \sum^q_{l=1}\gamma_l(x-\xi_l)^p_+ .}{y = \beta_0 + \beta_1 * x + \beta_2 * x^2 + ... + \beta_p * x^p + \gamma_1 * (pos(x - \xi_1))^p + ... + \gamma_q * (pos(x - \xi_q))^p}
+where \eqn{u_+ = u I(u > 0)}{pos(u) = u * I(u > 0)}.
 }
 

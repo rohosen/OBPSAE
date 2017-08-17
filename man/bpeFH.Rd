@@ -8,13 +8,13 @@ bpeFH(formula, data, errorvar, randvar = NULL, maxiter = 100,
   precision = 1e-04)
 }
 \arguments{
-\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. Details of model specification are given under Details.}
+\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.}
 
 \item{data}{optional data frame containing the variable names in \code{formula}.}
 
-\item{errorvar}{vector containing the variances of the random error for each small area.}
+\item{errorvar}{vector containing the variances of the random errors for all small areas.}
 
-\item{randvar}{varinace of the random effect. If not supplied, it is estimated by BPE.}
+\item{randvar}{variance of the random effect. If not supplied, it is estimated by BPE.}
 
 \item{maxiter}{maximum number of iterations used in estimating randvar.}
 
@@ -29,7 +29,8 @@ The function will return a list with the following objects.
 This function computes the Best Predictive Estimators (BPE) of the unknown parameters for Fay-Herriot model. It computes BPE of the regression coefficients of the fixed effect (beta). The variance of the random effect can be specified by the user in which case that will be used to calculate the BPE of beta. Otherwise the function will calculate BPE of the variance component of the random effect and use that to calculate the BPE of beta.
 }
 \details{
-If \code{randvar} is not provided, it is first estimated by its BPE. \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
+If \code{randvar} is not provided, it is first estimated by its BPE.\cr
+\cr \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.
 }
 \references{
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.

@@ -8,17 +8,17 @@ obpFHbenchmark(formula, data, errorvar, weight, method = c("adjusted",
   "augmented"), randvar = NULL, maxiter = 100, precision = 1e-04)
 }
 \arguments{
-\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. Details of model specification are given under Details.}
+\item{formula}{an object of class formula (or one that can be coerced to that class): a symbolic description of the model to be fitted. The variables included in formula must have a length equal to the number of small areas. More about the model specification are given under Details.}
 
 \item{data}{optional data frame containing the variable names in \code{formula}.}
 
-\item{errorvar}{vector containing the variances of the random error for each small area.}
+\item{errorvar}{vector containing the variances of the random errors for all small areas.}
 
-\item{weight}{vector containing the sampling weights of small areas. Default is uniform. If sum of the weights is not 1, the weights are normalized.}
+\item{weight}{vector containing the sampling weights of small areas. If sum of the weights is not 1, the weights are normalized.}
 
 \item{method}{string specifying the benchmarking method. Options are "adjusted" and "augmented". Computes both if not specified. See Details for more usage information.}
 
-\item{randvar}{varinace of the random effect. If not supplied, BPE is estimated.}
+\item{randvar}{variance of the random effect. If not supplied, BPE is estimated.}
 
 \item{maxiter}{maximum number of iterations used in estimating randvar.}
 
@@ -35,13 +35,13 @@ The function will return a list with all the following objects by default.
 This function computes the benchmarked Observed Best Predictor (OBP) for Fay-Herriot model. Depending on the \code{method} specified by the user it computes the Adjusted OBP or Augmented OBP or both.
 }
 \details{
-\cr If \code{method} is set to "adjusted", only \code{obpAdjusted} is returned.\cr
+If \code{method} is set to "adjusted", only \code{obpAdjusted} is returned.\cr
 \cr If \code{method} is set to "augmented", \code{obpAugmented, A.BPE.aug} and \code{beta.BPE.aug} are returned.\cr
 \cr The variance of the random effect can be specified by the user. Otherwise the function will calculate its Best Predictive Estimator (BPE). In the process of of computing OBP it also calculates the BPE of the regression coefficients of the fixed effect.\cr
 \cr \code{formula} is specified in the form \code{response ~ predictors} where the predictors are separated by \code{+}. \code{formula} has an implied intercept term. To remove the intercept term, use either \code{y ~ x - 1} or \code{y ~ 0 + x}.\cr
 }
 \references{
-Bandyopadhyay R, Jiang J (2017) "Benchmarking of Observed Best Predictor"
+Bandyopadhyay R, Jiang J (2017) "Benchmarking the Observed Best Predictor"
 
 Jiang J, Nguyen T, and Rao J. S. (2011), "Best Predictive Small Area Estimation", Journal of the American Statistical Association.
 }
